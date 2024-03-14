@@ -1,0 +1,8 @@
+[
+  { "name": "almog", "age": 33, "hobby": "programming" },
+  { "name": "asaf", "age": 22, "hobby": "guitar" },
+  { "name": "daniel", "age": 26, "hobby": "computer games" },
+  { "name": "shai", "age": 27, "hobby": "rapping" },
+  { "name": "ori", "age": 28, "hobby": "chill" },
+  { "name": "shimi", "age": 30, "hobby": "weaving" }
+]
