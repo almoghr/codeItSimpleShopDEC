@@ -23,6 +23,7 @@ export const User = mongoose.model("User", userSchema);
 app.use(express.json());
 // dangerous
 app.use(cors());
+app.use(express.static("Client/dist"));
 
 // GET
 // get all users from json
