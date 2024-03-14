@@ -8,8 +8,8 @@
     "start": "nodemon server.js",
     "reset": "node ./demo/resetDB.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently \"nodemon server.js\" \"cd client && npm start\"",
-    "render-postbuild": "cd client && yarn install && yarn build"
+    "dev": "concurrently \"nodemon server.js\" \"cd Client && npm start\"",
+    "render-postbuild": "cd Client && yarn install && yarn build"
   },
   "engines": {
     "node": ">=18"

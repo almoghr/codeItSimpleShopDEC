@@ -115,7 +115,7 @@ app.delete("/deleteUser/:id", async (req, res) => {
 
 app.get("*", (req, res) => {
   console.log(__dirname);
-  res.sendFile(__dirname + "/client/build/index.html");
+  res.sendFile(__dirname + "/Client/dist/index.html");
 });
 
 app.listen(port, async () => {
