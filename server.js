@@ -26,7 +26,7 @@ app.use(cors());
 
 // GET
 // get all users from json
-app.get("/", async (req, res) => {
+app.get("/getAll", async (req, res) => {
   try {
     const allUsers = await User.find({});
     if (allUsers.length === 0 || !allUsers) {
