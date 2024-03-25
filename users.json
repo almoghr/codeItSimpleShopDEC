@@ -1,8 +1,8 @@
 [
-  { "name": "almog", "age": 33, "hobby": "programming" },
-  { "name": "asaf", "age": 22, "hobby": "guitar" },
-  { "name": "daniel", "age": 26, "hobby": "computer games" },
-  { "name": "shai", "age": 27, "hobby": "rapping" },
-  { "name": "ori", "age": 28, "hobby": "chill" },
-  { "name": "shimi", "age": 30, "hobby": "weaving" }
+  { "name": "almog", "age": 33, "hobby": "programming", "password":"Aa123456" },
+  { "name": "asaf", "age": 22, "hobby": "guitar", "password":"Aa123456" },
+  { "name": "daniel", "age": 26, "hobby": "computer games", "password":"Aa123456" },
+  { "name": "shai", "age": 27, "hobby": "rapping", "password":"Aa123456" },
+  { "name": "ori", "age": 28, "hobby": "chill" , "password":"Aa123456"},
+  { "name": "shimi", "age": 30, "hobby": "weaving" , "password":"Aa123456"}
 ]

@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 import { DB_CLUSTER, DB_NAME, DB_PASS, DB_USERNAME, port } from "./config/config.js";
-import { createUserController, deleteUserController, getAllUsersController, getSingleUserController, updateUserController } from "./controllers/User.js";
+import { createUserController, deleteUserController, getAllUsersController, getSingleUserController, loginController, updateUserController } from "./controllers/User.js";
 import { createProductController, deleteProductController, getAllProductsController, getSingleProductController, updateProductController } from "./controllers/Product.js";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -19,6 +19,7 @@ app.use(express.static("Client/dist"));
 app.get("/getAllUsers", getAllUsersController);
 app.get("/users/:id", getSingleUserController);
 app.post("/createUser/", createUserController);
+app.post("/login", loginController);
 app.put("/updateUser/:id", updateUserController);
 app.delete("/deleteUser/:id", deleteUserController);
 

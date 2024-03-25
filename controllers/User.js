@@ -1,4 +1,6 @@
-import { deleteUserService, getAllUserService, getSingleUserService } from "../services/User.js";
+import { createUserService, deleteUserService, getAllUserService, getSingleUserByName, getSingleUserService } from "../services/User.js";
+import { compareHashedPassword } from "../utils/compareHashedPassword.js";
+import { hashPassword } from "../utils/passwordHashing.js";
 
 export const getAllUsersController =  async (req, res) => {
     try {
@@ -28,6 +30,7 @@ export const getAllUsersController =  async (req, res) => {
   export const createUserController = async (req, res) => {
     try {
       const userForm = { ...req.body };
+      userForm["password"] = hashPassword(req.body.password)
       const user = createUserService(userForm)
       await user.save();
       res.status(200).send(user);
@@ -74,6 +77,21 @@ export const getAllUsersController =  async (req, res) => {
       }
       return res.status(200).send(deletedUser);
     } catch (e) {
+      return res.status(500).send({ message: e.message });
+    }
+  }
+
+  export const loginController = async (req,res) => {
+    try{
+      const loginForm = {...req.body}
+      const user = await getSingleUserByName(loginForm.name)
+      const isValidPassword = compareHashedPassword(loginForm.password, user.password)
+      if(!isValidPassword || !user){
+        return res.status(404).send({ message: "username or password are incorrect" });
+      }
+      return res.status(200).send(user);
+    }catch(e){
+      console.log(e)
       return res.status(500).send({ message: e.message });
     }
   }

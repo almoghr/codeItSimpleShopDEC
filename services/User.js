@@ -9,6 +9,12 @@ export const getSingleUserService = (id) => {
     return  User.findOne({ _id: id });
 }
 
+export const getSingleUserByName = (name) => {
+    const user =  User.findOne({ name: name }).select("+password").exec();
+    console.log(user);
+    return user;
+}
+
 export const createUserService = (form) => {
     return new User(form);
 }
